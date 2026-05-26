@@ -3,6 +3,8 @@
 
 import { useState, FormEvent } from "react"
 import { LayoutGroup, motion } from "motion/react"
+
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/portfolio" : ""
 import { TextRotate } from "@/components/ui/text-rotate"
 import Floating, { FloatingElement } from "@/components/ui/parallax-floating"
 import {
@@ -185,28 +187,28 @@ const projects = [
     tag: "Branding & Marketing",
     description:
       "Identité visuelle complète pour une marketplace de produits authentiques africains. Logo, charte graphique, supports de communication et stratégie marketing.",
-    image: "/images/afrikeasy-mockup.jpg",
+    image: `${BASE_PATH}/images/afrikeasy-mockup.jpg`,
   },
   {
     title: "Campagne Print",
     tag: "Direction Artistique",
     description:
       "Conception d'affiches et flyers pour la communication offline de la marque AfrikEasy.",
-    image: "/images/afrikeasy-affiche.jpg",
+    image: `${BASE_PATH}/images/afrikeasy-affiche.jpg`,
   },
   {
     title: "Rollups & PLV",
     tag: "Supports Marketing",
     description:
       "Design de rollups et supports de PLV pour événements et points de vente partenaires.",
-    image: "/images/afrikeasy-rollup.jpg",
+    image: `${BASE_PATH}/images/afrikeasy-rollup.jpg`,
   },
   {
     title: "Site MFC",
     tag: "Développement Web",
     description:
       "Site vitrine full-stack pour un centre de formation professionnelle. Authentification, espace client, catalogue de formations, inscriptions en ligne. PHP, MySQL, HTML/CSS/JS.",
-    image: "/images/mfc-connexion.png",
+    image: `${BASE_PATH}/images/mfc-connexion.png`,
   },
 ]
 
@@ -516,7 +518,7 @@ export default function Portfolio() {
               className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl"
             >
               <img
-                src="/images/imgCam.PNG"
+                src={`${BASE_PATH}/images/imgCam.PNG`}
                 alt="Vignon Camille ONDZE YOYO"
                 className="w-full h-full object-cover"
               />
